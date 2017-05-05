@@ -1,7 +1,7 @@
 ---
-name: sholder
+name: shoulder
 runner_type: run-python
-description: Change sholder location of robot arm.
+description: Change shoulder location of robot arm.
 enabled: true
 entry_point: action.py
 parameters:
@@ -9,7 +9,7 @@ parameters:
     type: "string"
     description: "Part of the bot to move"
     immutable: true
-    default: "sholder"
+    default: "shoulder"
     position: 0
   location:
     type: "number"
