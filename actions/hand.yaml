@@ -1,0 +1,23 @@
+---
+name: hand
+runner_type: run-python
+description: Change hand location of robot arm.
+enabled: true
+entry_point: action.py
+parameters:
+  part:
+    type: "string"
+    description: "Part of the bot to move"
+    immutable: true
+    default: "hand"
+    position: 0
+  location:
+    type: "number"
+    description: "Location to set."
+    required: true
+    position: 1
+  get:
+    type: "boolean"
+    description: "Get location instead of set?"
+    default: false
+    position: 2
