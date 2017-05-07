@@ -21,3 +21,14 @@ def set_location(part, location):
     )
 
     return request.json()
+
+
+def set_torque(part, state):
+    """ Get the current location of a part.
+    """
+    request = requests.put(
+        'http://%s/v1/arm/%s/torque' % (ADDRESS, part),
+        json={'state': state}
+    )
+
+    return request.json()
