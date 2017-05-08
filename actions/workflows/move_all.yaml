@@ -1,0 +1,39 @@
+version: '2.0'
+name: robotpack.move-all
+description: Move all motor positions
+
+workflows:
+    main:
+      type: direct
+      input:
+        - grip_location
+        - wrist_location
+        - hand_location
+        - elbow_location
+        - shoulder_location
+        - pivot_location
+      tasks:
+        location_grip:
+          action: robotpack.grip
+          input:
+            location: <% $.grip_location %>
+        location_wrist:
+          action: robotpack.wrist
+          input:
+            location: <% $.wrist_location %>
+        location_hand:
+          action: robotpack.hand
+          input:
+            location: <% $.hand_location %>
+        location_elbow:
+          action: robotpack.elbow
+          input:
+            location: <% $.elbow_location %>
+        location_shoulder:
+          action: robotpack.shoulder
+          input:
+            location: <% $.shoulder_location %>
+        location_pivot:
+          action: robotpack.pivot
+          input:
+            location: <% $.pivot_location %>

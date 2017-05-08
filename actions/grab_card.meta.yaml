@@ -1,0 +1,10 @@
+name: grab-card
+description: Grab a card
+runner_type: mistral-v2
+enabled: true
+entry_point: workflows/grab_card.yaml
+parameters:
+  workflow:
+    default: robotpack.grab-card.main
+    immutable: true
+    type: string

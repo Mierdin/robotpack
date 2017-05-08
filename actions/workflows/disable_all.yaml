@@ -1,0 +1,32 @@
+version: '2.0'
+name: robotpack.disable-all
+description: Disable torque on all motoros.
+
+workflows:
+    main:
+      type: direct
+      tasks:
+        disable-grip:
+          action: robotpack.grip-torque
+          input:
+            state: false
+        disable-wrist:
+          action: robotpack.wrist-torque
+          input:
+            state: false
+        disable-hand:
+          action: robotpack.hand-torque
+          input:
+            state: false
+        disable-elbow:
+          action: robotpack.elbow-torque
+          input:
+            state: false
+        disable-shoulder:
+          action: robotpack.shoulder-torque
+          input:
+            state: false
+        disable-pivot:
+          action: robotpack.pivot-torque
+          input:
+            state: false

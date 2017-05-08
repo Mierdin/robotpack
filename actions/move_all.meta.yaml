@@ -1,0 +1,22 @@
+name: move-all
+description: Locate all motor positions
+runner_type: mistral-v2
+enabled: true
+entry_point: workflows/move_all.yaml
+parameters:
+  grip_location:
+    type: number
+  wrist_location:
+    type: number
+  shoulder_location:
+    type: number
+  elbow_location:
+    type: number
+  hand_location:
+    type: number
+  pivot_location:
+    type: number
+  workflow:
+    default: robotpack.move-all.main
+    immutable: true
+    type: string

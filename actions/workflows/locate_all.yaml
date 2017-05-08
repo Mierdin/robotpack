@@ -1,0 +1,50 @@
+version: '2.0'
+name: robotpack.locate-all
+description: Locate all motor positions
+
+workflows:
+    main:
+      type: direct
+      tasks:
+        get_location_grip:
+          action: robotpack.grip
+          input:
+            location: 0.0
+            get: true
+          publish:
+            grip_location: <% task(get_location_grip).result.result.location %>
+        get_location_wrist:
+          action: robotpack.wrist
+          input:
+            location: 0.0
+            get: true
+          publish:
+            wrist_location: <% task(get_location_wrist).result.result.location %>
+        get_location_hand:
+          action: robotpack.hand
+          input:
+            location: 0.0
+            get: true
+          publish:
+            hand_location: <% task(get_location_hand).result.result.location %>
+        get_location_elbow:
+          action: robotpack.elbow
+          input:
+            location: 0.0
+            get: true
+          publish:
+            elbow_location: <% task(get_location_elbow).result.result.location %>
+        get_location_shoulder:
+          action: robotpack.shoulder
+          input:
+            location: 0.0
+            get: true
+          publish:
+            shoulder_location: <% task(get_location_shoulder).result.result.location %>
+        get_location_pivot:
+          action: robotpack.pivot
+          input:
+            location: 0.0
+            get: true
+          publish:
+            pivot_location: <% task(get_location_pivot).result.result.location %>

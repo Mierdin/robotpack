@@ -1,0 +1,10 @@
+name: disable-all
+description: Disable all motor torque
+runner_type: mistral-v2
+enabled: true
+entry_point: workflows/disable_all.yaml
+parameters:
+  workflow:
+    default: robotpack.disable-all.main
+    immutable: true
+    type: string
