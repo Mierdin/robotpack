@@ -5,11 +5,23 @@ description: Grab a card.
 workflows:
     main:
       type: direct
+      concurrency: 1
       tasks:
+        safety_first:
+          action: robotpack.move-all
+          input:
+            wrist_location: 0.5
+            shoulder_location: 0.0
+            elbow_location: 0.1633
+            hand_location: 1.0
+            grip_location: 1.0
+            pivot_location: 0.0
+          on-success:
+            - go_to_card
         go_to_card:
           action: robotpack.move-all
           input:
-            wrist_location: 0.4983
+            wrist_location: 0.5
             shoulder_location: 0.615
             elbow_location: 0.1633
             hand_location: 0.8833
@@ -42,7 +54,7 @@ workflows:
             elbow_location: 0.42
             hand_location: 0.59
             grip_location: 0.0
-            pivot_location: 0.3266
+            pivot_location: 1.0
           on-success:
             - release_card
         release_card:
