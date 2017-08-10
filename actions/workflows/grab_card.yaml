@@ -1,5 +1,6 @@
+---
 version: '2.0'
-name: robotpack.grab-card
+name: robotpack.grab-card-mistral
 description: Grab a card.
 
 workflows:

@@ -1,3 +1,4 @@
+---
 name: disable-all
 description: Disable all motor torque
 runner_type: mistral-v2

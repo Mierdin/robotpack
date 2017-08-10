@@ -1,0 +1,42 @@
+---
+chain:
+  - name: "get_in_position"
+    ref: "robotpack.move-all"
+    parameters:
+      wrist_location: 0.49666666666666665
+      shoulder_location: 0.14166666666666666
+      elbow_location: 0.27666666666666667
+      hand_location: 0.43333333333333335
+      pivot_location: 1.0
+      grip_location: 0.0
+    on-success: "wave_1"
+  - name: "wave_1"
+    ref: "robotpack.wrist"
+    parameters:
+      location: 0.0
+    on-success: "wave_2"
+  - name: "wave_2"
+    ref: "robotpack.wrist"
+    parameters:
+      location: 1.0
+    on-success: "wave_3"
+  - name: "wave_3"
+    ref: "robotpack.wrist"
+    parameters:
+      location: 0.0
+    on-success: "wave_4"
+  - name: "wave_4"
+    ref: "robotpack.wrist"
+    parameters:
+      location: 1.0
+    on-success: "return_home"
+  - name: "return_home"
+    ref: "robotpack.move-all"
+    parameters:
+      wrist_location: 0.5
+      shoulder_location: 0.0
+      elbow_location: 0.0
+      hand_location: 1.0
+      grip_location: 0.0
+      pivot_location: 0.0
+      grip_location: 0.0

@@ -1,5 +1,6 @@
+---
 version: '2.0'
-name: robotpack.move-all
+name: robotpack.move-all-mistral
 description: Move all motor positions
 
 workflows:

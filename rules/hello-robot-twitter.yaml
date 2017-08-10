@@ -1,0 +1,16 @@
+name: hello_robot_twitter
+pack: robotpack
+description: Wave hello to guest.
+enabled: true
+
+trigger:
+    type: twitter.stream_matched_tweet
+
+criteria:
+    trigger.text:
+        type: "matchregex"
+        pattern : "^(?=.*(?i)hello)(?=.*(?i)Stack_Storm)(?=.*(?i)robot)(?=.*(?i)OpenStackSummit).*$"
+
+action:
+    ref: robotpack.wave
+    parameters: {}

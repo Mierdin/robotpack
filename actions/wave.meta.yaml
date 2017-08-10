@@ -1,0 +1,8 @@
+---
+name: "wave"
+pack: "robotpack"
+description: "Simple action chain to make the robot wave."
+runner_type: "action-chain"
+entry_point: "chains/wave.yaml"
+enabled: true
+parameters: {}

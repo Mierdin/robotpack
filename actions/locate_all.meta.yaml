@@ -1,3 +1,4 @@
+---
 name: locate-all
 description: Locate all motor positions
 runner_type: mistral-v2

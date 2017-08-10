@@ -1,0 +1,51 @@
+---
+chain:
+  - name: go_to_card
+    ref: robotpack.move-all
+    parameters:
+      wrist_location: 0.5
+      shoulder_location: 0.615
+      elbow_location: 0.1633
+      hand_location: 0.8833
+      grip_location: 1.0
+      pivot_location: 0.0
+    on-success: grab_card
+  - name: grab_card
+    ref: robotpack.grip
+    parameters:
+      location: 0.0
+    on-success: return_to_safty
+  - name: return_to_safty
+    ref: robotpack.move-all
+    parameters:
+      wrist_location: 0.4983
+      shoulder_location: 0.0
+      elbow_location: 0.1633
+      hand_location: 0.8833
+      grip_location: 0.0
+      pivot_location: 0.0
+    on-success: display_card
+  - name: display_card
+    ref: robotpack.move-all
+    parameters:
+      wrist_location: 0.0
+      shoulder_location: 0.31
+      elbow_location: 0.42
+      hand_location: 0.59
+      grip_location: 0.0
+      pivot_location: 1.0
+    on-success: release_card
+  - name: release_card
+    ref: robotpack.grip
+    parameters:
+      location: 1.0
+    on-success: return_home
+  - name: return_home
+    ref: robotpack.move-all
+    parameters:
+      wrist_location: 0.5
+      shoulder_location: 0.0
+      elbow_location: 0.0
+      hand_location: 1.0
+      grip_location: 0.0
+      pivot_location: 0.0

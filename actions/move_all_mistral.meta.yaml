@@ -1,10 +1,9 @@
 ---
-name: "move-all"
-pack: "robotpack"
-description: "Move all motors in robot."
-runner_type: "action-chain"
-entry_point: "chains/move_all.yaml"
+name: move-all-mistral
+description: Locate all motor positions
+runner_type: mistral-v2
 enabled: true
+entry_point: workflows/move_all.yaml
 parameters:
   grip_location:
     type: number
@@ -18,3 +17,7 @@ parameters:
     type: number
   pivot_location:
     type: number
+  workflow:
+    default: robotpack.move-all-mistral.main
+    immutable: true
+    type: string

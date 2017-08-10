@@ -1,0 +1,31 @@
+---
+chain:
+  - name: pivot
+    ref: robotpack.pivot
+    parameters:
+      location: "{{ pivot_location }}"
+    on-success: "grip"
+  - name: grip
+    ref: robotpack.grip
+    parameters:
+      location: "{{ grip_location }}"
+    on-success: "shoulder"
+  - name: shoulder
+    ref: robotpack.shoulder
+    parameters:
+      location: "{{ shoulder_location }}"
+    on-success: "wrist"
+  - name: wrist
+    ref: robotpack.wrist
+    parameters:
+      location: "{{ wrist_location }}"
+    on-success: "hand"
+  - name: hand
+    ref: robotpack.hand
+    parameters:
+      location: "{{ hand_location }}"
+    on-success: "elbow"
+  - name: elbow
+    ref: robotpack.elbow
+    parameters:
+      location: "{{ elbow_location }}"

@@ -9,7 +9,7 @@ trigger:
 criteria:
     trigger.text:
         type: "matchregex"
-        pattern : "^(?=.*Stack_Storm)(?=.*robot).*(?=.*OpenStackSummit).*$"
+        pattern : "^(?=.*(?i)prize)(?=.*(?i)Stack_Storm)(?=.*(?i)robot)(?=.*(?i)OpenStackSummit).*$"
 
 action:
     ref: robotpack.grab-card

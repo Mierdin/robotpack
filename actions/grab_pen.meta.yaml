@@ -1,0 +1,8 @@
+---
+name: "grab-pen"
+pack: "robotpack"
+description: "Grab a pen"
+runner_type: "action-chain"
+entry_point: "chains/grab_pen.yaml"
+enabled: true
+parameters: {}
