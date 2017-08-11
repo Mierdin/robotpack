@@ -15,4 +15,4 @@ parameters:
     type: "boolean"
     description: "Set or get torque?"
     default: false
-    position: 2
+    position: 1
