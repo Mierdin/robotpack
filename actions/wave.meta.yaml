@@ -5,4 +5,12 @@ description: "Simple action chain to make the robot wave."
 runner_type: "action-chain"
 entry_point: "chains/wave.yaml"
 enabled: true
-parameters: {}
+parameters:
+  skip_notify:
+    default:
+      - get_in_position
+      - wave_1
+      - wave_2
+      - wave_3
+      - wave_4
+      - return_home
